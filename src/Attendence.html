@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+</head>
+<body>
+<h1>Attendance Tracker</h1>
+
+<form action="/add_attendance" method="post">
+   //label for="site_name">Site Name:</label>
+    <input type="text" name="site_name" required>
+
+   //label for="attendance">Attendance:</label>
+    <input type="text" name="attendance" required>
+
+    <button type="submit">Submit Attendance</button>
+</form>
+
+<h2>Site-wise Attendance</h2>
+<ul>
+    {% for site in sites %}
+    <li><a href="#">{{ site }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/generate_report">Generate Report</a>
+</body>
+</html>
